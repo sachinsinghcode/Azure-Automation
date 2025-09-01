@@ -17,7 +17,7 @@
      $AZURE_TENANT_ID = $env:AZURE_TENANT_ID  
      $AzSubscName = $env:Subsciption_Name                
  
-     $StorageAccount = $env:ResourceGroup        
+     $StorageAccount = $env:StorageAccount        
      $ResourceGroup = $env:ResourceGroup 
      $JsonString = $env:JsonString
 
