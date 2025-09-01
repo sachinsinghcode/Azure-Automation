@@ -19,6 +19,7 @@
  
      $StorageAccount = $env:ResourceGroup        
      $ResourceGroup = $env:ResourceGroup 
+     $JsonString = $env:JsonString
 
 
      Write-Output " Subscription ID =  $($env:subscriptionId) "
@@ -26,6 +27,7 @@
      Write-Output " Subscription Name =  $($env:Subsciption_Name) "
      Write-Output " Storage Account =  $($env:StorageAccount) "
      Write-Output " Resource Group =  $($env:ResourceGroup) "
+     Write-Output " MetaData =  $($env:JsonString) "
      
 
 
