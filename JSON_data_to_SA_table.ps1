@@ -48,7 +48,7 @@ $schema = @(
 try {
     $jsonData = $JsonString | ConvertFrom-Json
 } catch {
-    throw "❌ Invalid JSON string provided."
+    throw "Invalid JSON string provided."
 }
 
 # Handle both single object and array
@@ -68,7 +68,7 @@ foreach ($row in $jsonData) {
     }
 }
 
-Write-Host "✅ Schema validation passed. Inserting rows..."
+Write-Host "Schema validation passed. Inserting rows..."
 
 # Get storage context and table reference
 $ctx   = (Get-AzStorageAccount -ResourceGroupName $ResourceGroup -Name $StorageAccount).Context
@@ -90,4 +90,4 @@ foreach ($row in $jsonData) {
     Write-Host "✔ Inserted row with PartitionKey=$partitionKey RowKey=$rowKey"
 }
 
-Write-Host "🎉 All rows inserted successfully."
+Write-Host "All rows inserted successfully."
