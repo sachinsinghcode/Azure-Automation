@@ -87,7 +87,7 @@ foreach ($row in $jsonData) {
     }
 
     Add-AzTableRow -Table $table.CloudTable -PartitionKey $partitionKey -RowKey $rowKey -Property $entity
-    Write-Host "✔ Inserted row with PartitionKey=$partitionKey RowKey=$rowKey"
+    Write-Host ' Inserted row with PartitionKey= $($partitionKey) RowKey=$($rowKey) '
 }
 
-Write-Host "All rows inserted successfully."
+Write-Host  ' All rows inserted successfully '
