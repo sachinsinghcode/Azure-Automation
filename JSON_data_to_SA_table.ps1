@@ -71,8 +71,11 @@ foreach ($row in $jsonData) {
 Write-Host "Schema validation passed. Inserting rows..."
 
 # Get storage context and table reference
-$ctx   = (Get-AzStorageAccount -ResourceGroupName $ResourceGroup -Name $StorageAccount).Context
-$table = Get-AzStorageTable –Name $TableName –Context $ctx
+$storageAccount = Get-AzStorageAccount -ResourceGroupName $ResourceGroup -Name $StorageAccount
+$ctx = New-AzStorageContext -StorageAccountName $storageAccount.StorageAccountName -StorageAccountKey (Get-AzStorageAccountKey -ResourceGroupName $ResourceGroup -Name $StorageAccount)[0].Value
+
+$table = Get-AzStorageTable -Name $TableName -Context $ctx
+
 
 # Insert rows
 foreach ($row in $jsonData) {
